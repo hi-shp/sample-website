@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Pretendard:wght@400;600;700&display=swap');
+
+@keyframes slideIn {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* 전체 컨테이너 애니메이션 */
+.I-screen {
+    align-items: center;
+    display: flex; /* inline-flex에서 flex로 변경하여 전체 컨테이너가 넓이를 차지하게 수정 */
+    gap: 4px;
+    position: relative;
+    animation: slideIn 1s ease-out;
+    overflow: hidden; /* 컨테이너가 자식 요소를 넘어서지 않도록 숨김 */
+    margin-top: 100px;
+}
+
+/* 뷰 컨테이너 */
+.I-screen .I-view {
+    align-items: center;
+    display: flex; /* inline-flex에서 flex로 변경하여 컨테이너 내의 모든 요소를 지원 */
+    flex-direction: column;
+    gap: 48px;
+    padding: 24px;
+    position: relative;
+    margin-top: -250px;
+    margin-left: 50px;
+}
+
+/* 프레임 컨테이너 */
+.I-screen .I-frame {
+    align-items: center;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: relative;
+    width: 100%;
+}
+
+/* 이미지 스타일 */
+.I-screen .I-img {
+    width: auto; /* 이미지가 컨테이너의 너비를 가득 채우게 설정 */
+    height: 70%; /* 높이를 자동으로 설정하여 비율을 유지하도록 설정 */
+    margin-left: 50px;
+    margin-top: -150px;
+}
+
+/* 텍스트 래퍼 */
+.I-screen .I-text-wrapper {
+    align-self: stretch;
+    color: #111111;
+    font-family: 'Pacifico', cursive; /* 폰트 스타일 설정 */
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 50px;
+    margin-top: -1px;
+    position: relative;
+}
+
+/* AI 설명 텍스트 */
+.I-screen .I-AI {
+    color: #767676;
+    font-family: 'Pretendard', sans-serif; /* 폰트 스타일 설정 */
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -0.4px;
+    line-height: 28px;
+    position: relative;
+    width: fit-content;
+}
+
+/* 스팬 텍스트 */
+.I-screen .I-span {
+    letter-spacing: -0.06px;
+}
+
+/* 보조 텍스트 스타일 */
+.I-screen .I-text-wrapper-2 {
+    font-family: 'Pretendard', sans-serif; /* 폰트 스타일 설정 */
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.08px;
+}
+
+/* 프레임 래퍼 */
+.I-screen .I-frame-wrapper {
+    align-items: center;
+    align-self: stretch;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 42px;
+    position: relative;
+    width: 100%;
+}
+
+/* 디브 래퍼 */
+.I-screen .I-div-wrapper {
+    align-items: center;
+    background-color: #76bcef;
+    border-radius: 20px;
+    display: flex;
+    gap: 10px;
+    height: 52px;
+    justify-content: center;
+    overflow: hidden;
+    padding: 8px 40px;
+    position: relative;
+    width: 180px;
+    cursor: pointer; /* 클릭 가능한 커서로 변경 */
+}
+
+/* 디브 텍스트 */
+.I-screen .I-div {
+    color: #ffffff;
+    font-family: 'Pretendard', sans-serif; /* 폰트 스타일 설정 */
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 34px;
+    margin-left: -0.5px;
+    margin-right: -0.5px;
+    position: relative;
+    text-align: center; 
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+
+.I-div:hover {
+transform: translateY(-3px); /* 호버 시 약간 위로 이동 */
+}
+
+.I-div:active {
+background-color: #3e8cb5; /* 클릭 시 배경색 변경 */
+transform: translateY(0); /* 클릭 시 원래 위치로 이동 */
+}
+
+@media screen and (max-width: 600px) {
+    .I-screen {
+        flex-direction: column; /* 전체 컨테이너를 수직 방향으로 배열 */
+        align-items: center; /* 가운데 정렬 */
+        text-align: center;
+    }
+
+    .I-screen .I-view {
+        margin-left: 0; /* 왼쪽 여백 제거 */
+        margin-top: 0; /* 위쪽 여백 제거 */
+    }
+
+    .I-screen .I-img {
+        margin-left: 0; /* 이미지의 왼쪽 여백 제거 */
+        margin-top: 0; /* 이미지의 위쪽 여백 제거 */
+        width: 100%; /* 이미지 너비 조정 */
+        height: auto; /* 이미지 비율 유지 */
+    }
+
+    .I-screen .I-div-wrapper {
+        align-items: center; /* 가운데 정렬 */
+        width: 90%; /* 버튼 너비 조정 */
+        height: 36px; /* 버튼 높이 조정 */
+    }
+}
+
+@media screen and (max-width: 1050px) {
+
+    .I-screen {
+        flex-direction: column; /* 전체 컨테이너를 수직 방향으로 배열 */
+        align-items: center; /* 가운데 정렬 */
+        text-align: center;
+    }
+
+    .I-screen .I-view {
+        margin-left: 0; /* 왼쪽 여백 제거 */
+        margin-top: -100px; /* 위쪽 여백 제거 */
+    }
+
+    .I-screen .I-div-wrapper {
+        align-items: center; /* 가운데 정렬 */
+        width: 90%; /* 버튼 너비 조정 */
+        height: 36px; /* 버튼 높이 조정 */
+    }
+    .I-screen .I-img {
+        margin-left: 0; /* 이미지의 왼쪽 여백 제거 */
+        margin-top: 0; /* 이미지의 위쪽 여백 제거 */
+        width: 80%; /* 이미지 너비 조정 */
+        height: auto; /* 이미지 비율 유지 */
+    }
+}
+
+
+@media screen and (max-width: 450px) {
+    .I-screen {
+        flex-direction: column; /* 전체 컨테이너를 수직 방향으로 배열 */
+        align-items: center; /* 가운데 정렬 */
+        text-align: center;
+    }
+
+    .I-screen .I-view {
+        margin-left: 0; /* 왼쪽 여백 제거 */
+        margin-top: 0; /* 위쪽 여백 제거 */
+    }
+
+    .I-screen .I-img {
+        margin-left: 0; /* 이미지의 왼쪽 여백 제거 */
+        margin-top: 0; /* 이미지의 위쪽 여백 제거 */
+        width: 100%; /* 이미지 너비 조정 */
+        height: auto; /* 이미지 비율 유지 */
+    }
+
+    .I-screen .I-div-wrapper {
+        align-items: center; /* 가운데 정렬 */
+        width: 90%; /* 버튼 너비 조정 */
+        height: 36px; /* 버튼 높이 조정 */
+    }
+}

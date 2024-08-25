@@ -1,0 +1,114 @@
+.feedback {
+  padding: 50px;
+  background-color: #f9f9f9;
+  margin: 50px auto;
+  max-width: 800px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: -200px;
+}
+
+.feedback-content {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 50px;
+}
+
+.feedback-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.h13 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.h35 {
+  font-size: 18px;
+  color: #666;
+}
+
+.span6 {
+  color: red;
+  font-weight: bold;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.row-field {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.name-field, .age-field {
+  flex: 1;
+}
+
+.name-input, .age-input, .email-input, .message-input, .phone-input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.email-field, .contact-field, .message-field {
+  margin-bottom: 20px;
+}
+
+.checkbox-field {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.discount-info {
+  margin-right: 10px;
+}
+
+.submit-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.submit {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.submit:hover {
+  background-color: #0056b3;
+}
+
+.b6 {
+  font-weight: bold;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="checkbox"] + label {
+  margin-left: 5px;
+}
+
+.submit-message{
+  color: blue;
+  text-align: center;
+  font-weight: 700;
+}

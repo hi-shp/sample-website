@@ -1,0 +1,38 @@
+/* 웹 폰트 임포트 */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Pretendard:wght@400&display=swap');
+
+/* 네비게이션 바 스타일 */
+.nav {
+    position: fixed; /* 상단에 고정 */
+    top: 0;
+    left: 0;
+    right: 0; /* 오른쪽도 고정 */
+    background: linear-gradient(180deg, rgba(248, 248, 250, 0.7) 0%, rgb(248, 248, 250) 39.5%);
+    display: flex;
+    justify-content: center; /* 중앙 정렬 */
+    align-items: center;
+    padding: 2% 5%; /* 상대 단위 패딩 */
+    box-sizing: border-box;
+    z-index: 1000; /* 다른 요소들 위에 위치하도록 설정 */
+    width: 100%; /* 화면 전체 너비 */
+}
+
+/* 네비게이션 바 내 아이템들 */
+.nav .nav-items {
+    display: flex;
+    justify-content: space-between; /* 네비게이션 바의 양쪽 끝에 아이템 배치 */
+    align-items: center;
+    width: 100%;
+}
+
+/* 홈 버튼 스타일 */
+.nav .home {
+    color: #76bcef;
+    font-family: 'Pacifico', cursive;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 50px;
+    white-space: nowrap;
+    width: fit-content;
+    cursor: pointer;
+}

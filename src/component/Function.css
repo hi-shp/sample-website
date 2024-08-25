@@ -1,0 +1,278 @@
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.fuction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    padding: 20px;
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    margin: 0 auto;
+    background: linear-gradient(180deg, rgba(248, 248, 250, 0.7) 0%, rgb(248, 248, 250) 39.5%);
+}
+
+.f-text {
+    color: #111111;
+    font-family: 'Pretendard', sans-serif;
+    font-size: 35px;
+    font-weight: 700; /* Updated to bold weight */
+    text-align: center;
+    margin-top: -150px;
+    margin-bottom: 100px;
+    animation: pulse 1.5s ease-in-out 1; /* 1.5초 동안 애니메이션을 3번 반복 */
+}
+
+
+.f-frame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+}
+
+
+.f-frame-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+
+    background-color: #ffffff; /* White background */
+    border-radius: 20px; /* Rounded corners */
+    padding: 30px; /* Internal spacing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds shadow for better visibility */
+    width: 100%; /* Full width of the container */
+    max-width: 1300px; /* Optional: limits maximum width */
+    box-sizing: border-box;
+
+    opacity: 0; /* 초기 상태는 숨김 */
+    transform: translateY(100px); /* 아래로 100px 이동한 상태 */
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out; /* 애니메이션 추가 */
+}
+
+.f-frame-wrapper.show {
+    opacity: 1;
+    transform: translateY(0); /* 원래 위치로 슬라이드 업 */
+}
+
+.f-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+    max-width: 1000px;
+    box-sizing: border-box; /* 패딩 및 테두리를 포함한 너비 계산 */
+}
+
+.f-element {
+    max-width: 100%;
+    max-height: 200px;
+    width: auto;
+    height: auto;
+}
+
+.f-frame-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.f-text-wrapper-2 {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.08px;
+    text-align: center;
+}
+
+.f-p {
+    color: #767676;
+    font-family: 'Pretendard', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -0.4px;
+    line-height: 28px;
+    text-align: center;
+}
+
+.f-frame-4 {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.f-frame-5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.f-frame-6 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #76bcef;
+    border-radius: 20px;
+    height: 52px;
+    padding: 8px 40px;
+    width: 300px;
+    margin: 20px auto;
+}
+
+.f-button {
+    background-color: #76bcef; /* 버튼 배경색 */
+    color: #ffffff; /* 버튼 텍스트 색상 */
+    font-family: 'Pretendard', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 12px 24px;
+    border: none; /* 테두리 제거 */
+    border-radius: 8px; /* 버튼 모서리 둥글게 */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.f-button:hover {
+    transform: translateY(-3px); /* 호버 시 약간 위로 이동 */
+}
+
+.f-button:active {
+    background-color: #3e8cb5; /* 클릭 시 배경색 변경 */
+    transform: translateY(0); /* 클릭 시 원래 위치로 이동 */
+}
+
+
+.f-text-wrapper-3 {
+    color: #ffffff;
+    font-family: 'Pretendard', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.08px;
+    text-align: center;
+}
+
+/* 기본 스타일에 대한 미디어 쿼리 */
+
+/* 모바일 기기 및 작은 화면용 */
+@media (max-width: 768px) {
+    .f-text {
+        font-size: 28px; /* 작은 화면에서 폰트 크기 조정 */
+        margin-top: -100px; /* 마진 조정 */
+        margin-bottom: 50px; /* 마진 조정 */
+    }
+
+    .f-frame-wrapper {
+        padding: 20px; /* 내부 여백 조정 */
+        gap: 30px; /* 아이템 간격 조정 */
+    }
+
+    .f-div {
+        flex-direction: column; /* 작은 화면에서 세로 정렬 */
+        gap: 20px; /* 아이템 간격 조정 */
+    }
+
+    .f-element {
+        max-height: 150px; /* 요소 최대 높이 조정 */
+    }
+
+    .f-frame-4 {
+        flex-direction: column; /* 작은 화면에서 세로 정렬 */
+        gap: 15px; /* 아이템 간격 조정 */
+    }
+
+    .f-frame-5, .f-frame-6 {
+        align-items: center;
+        padding: 10px 20px; /* 버튼 내부 여백 조정 */
+        width: 80%; /* 버튼 너비 100%로 조정 */
+    }
+
+    .f-button {
+        align-items:center ;
+        font-size: 16px; /* 버튼 폰트 크기 조정 */
+        padding: 10px 20px; /* 버튼 내부 여백 조정 */
+    }
+
+    .f-text-wrapper-2 {
+        font-size: 16px; /* 작은 화면에서 폰트 크기 조정 */
+    }
+
+    .f-p {
+        font-size: 14px; /* 작은 화면에서 폰트 크기 조정 */
+    }
+}
+
+/* 더 작은 화면용 (예: 스마트폰) */
+@media (max-width: 480px) {
+    .f-text {
+        font-size: 24px; /* 더 작은 화면에서 폰트 크기 조정 */
+        margin-top: -80px; /* 마진 조정 */
+        margin-bottom: 30px; /* 마진 조정 */
+    }
+
+    .f-frame-wrapper {
+        padding: 15px; /* 내부 여백 조정 */
+        gap: 20px; /* 아이템 간격 조정 */
+    }
+
+    .f-div {
+        gap: 15px; /* 아이템 간격 조정 */
+    }
+
+    .f-element {
+        max-height: 120px; /* 요소 최대 높이 조정 */
+    }
+
+    .f-frame-4 {
+        gap: 10px; /* 아이템 간격 조정 */
+    }
+
+    .f-frame-5, .f-frame-6 {
+        align-items: center;
+        padding: 8px 16px; /* 버튼 내부 여백 조정 */
+        width: 70%; /* 버튼 너비 100%로 조정 */
+    }
+
+    .f-button {
+        font-size: 14px; /* 버튼 폰트 크기 조정 */
+        padding: 8px 16px; /* 버튼 내부 여백 조정 */
+        width: 50px;
+    }
+
+    .f-text-wrapper-2 {
+        font-size: 14px; /* 더 작은 화면에서 폰트 크기 조정 */
+    }
+
+    .f-p {
+        font-size: 12px; /* 더 작은 화면에서 폰트 크기 조정 */
+    }
+}

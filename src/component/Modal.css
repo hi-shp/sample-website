@@ -1,0 +1,151 @@
+/* 웹 폰트 임포트 */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Pretendard:wght@400&display=swap');
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* 모달이 다른 요소 위에 오도록 설정 */
+}
+
+.modal-content {
+    border-radius: 20px;
+    background: #76BCEF;
+    box-shadow: 0px 8px 20px 12px rgba(118, 118, 118, 0.25);
+    padding: 50px;
+    position: relative;
+    width: 80%;
+    max-width: 500px;
+    color: white;
+    text-align: center;
+}
+
+.h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 30px;
+    margin: 0 auto 70px auto; /* 중앙 정렬 및 여백 설정 */
+    text-align: center; /* 제목 중앙 정렬 */
+}
+
+.modal-content img {
+    width: 80px; /* 원하는 너비로 설정 */
+    height: auto; /* 비율을 유지하면서 자동으로 높이를 조절 */
+    max-width: 100%; /* 부모 요소의 너비를 초과하지 않도록 설정 */
+    display: block; /* 이미지 주위의 여백을 제거 */
+    margin: 0 auto; /* 중앙 정렬 */
+    margin-bottom: -20px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.modal-contents {
+    margin: auto;
+    line-height: 30px; /* 텍스트 간격 설정 */
+}
+
+.modal-email {
+    position: relative; /* 부모 요소의 상대적 위치 설정 */
+    display: flex;
+    align-items: center; /* 세로 중앙 정렬 */
+    margin-top: 20px;
+    width: 100%; /* 전체 너비 설정 */
+}
+
+.modal-email input {
+    width: 100%; /* 이미지의 너비를 고려하여 입력 필드 너비 설정 */
+    height: 30px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    position: relative; /* 자식 요소가 절대 위치로 배치될 수 있도록 설정 */
+}
+
+.modal-email img {
+    position: absolute; /* 이미지의 절대 위치 설정 */
+    right: 10px; /* 폼의 오른쪽에 위치 */
+    top: 50%; /* 폼의 수직 중앙에 위치 */
+    transform: translateY(-50%); /* 수직 중앙 정렬 */
+    width: 50px; /* 이미지 너비 설정 */
+    height: 50px; /* 이미지 높이 설정 */
+    max-width: 40px; /* 부모 요소의 너비에 맞추어 최대 너비 설정 */
+    max-height: 40px; /* 부모 요소의 높이에 맞추어 최대 높이 설정 */
+    cursor: pointer; /* 클릭 가능하게 설정 */
+}
+
+.submitted-message {
+    color: rgb(255, 255, 255);
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.m-highlight{
+    font-weight: 700;
+    color: black;
+}
+
+/* 미디어 쿼리 */
+
+/* 화면 너비가 768px 이하일 때 */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%; /* 모달 너비를 90%로 조정 */
+        padding: 20px; /* 패딩 줄이기 */
+    }
+
+    .h2 {
+        font-size: 24px; /* 제목 폰트 크기 줄이기 */
+        margin-bottom: 40px; /* 여백 줄이기 */
+    }
+
+    .modal-email input {
+        height: 40px; /* 입력 필드 높이 조정 */
+        padding: 8px; /* 패딩 줄이기 */
+    }
+
+    .modal-email img {
+        width: 40px; /* 이미지 너비 줄이기 */
+        height: 40px; /* 이미지 높이 줄이기 */
+        max-width: 30px; /* 최대 너비 설정 */
+        max-height: 30px; /* 최대 높이 설정 */
+    }
+}
+
+/* 화면 너비가 480px 이하일 때 */
+@media (max-width: 480px) {
+    .modal-content {
+        width: 95%; /* 모달 너비를 95%로 조정 */
+        padding: 15px; /* 패딩 줄이기 */
+    }
+
+    .h2 {
+        font-size: 20px; /* 제목 폰트 크기 줄이기 */
+        margin-bottom: 30px; /* 여백 줄이기 */
+    }
+
+    .modal-email input {
+        height: 35px; /* 입력 필드 높이 조정 */
+        padding: 6px; /* 패딩 줄이기 */
+    }
+
+    .modal-email img {
+        width: 30px; /* 이미지 너비 줄이기 */
+        height: 30px; /* 이미지 높이 줄이기 */
+        max-width: 20px; /* 최대 너비 설정 */
+        max-height: 20px; /* 최대 높이 설정 */
+    }
+}

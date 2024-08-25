@@ -1,0 +1,32 @@
+/* 전체 페이지 스타일 */
+.App {
+    display: flex;
+    flex-direction: column; /* 자식 요소를 수직으로 배열 */
+    height: 100vh; /* 전체 화면 높이 */
+    margin: 0;
+    font-family: 'Pretendard', sans-serif; /* 기본 폰트 설정 */
+    background: linear-gradient(180deg, rgba(248, 248, 250, 0.7) 0%, rgb(248, 248, 250) 39.5%);
+}
+
+/* header 스타일 */
+header {
+    width: 100%;
+    background-color: #ffffff; /* 필요에 따라 배경색 추가 */
+    padding: 0 20px; /* 좌우 패딩 추가 */
+    box-sizing: border-box; /* 패딩과 테두리를 포함한 너비 계산 */
+}
+
+/* main 스타일 */
+main {
+    display: flex;
+    flex-direction: column; /* 자식 요소를 수직으로 배열 */
+    align-items: center; /* 수평 중앙 정렬 */
+    justify-content: center;
+    gap: 25px; /* 자식 요소 간의 간격 설정 */
+    margin: 0;
+    padding: 25px; /* 내부 여백 추가 */
+    box-sizing: border-box; /* 패딩과 테두리를 포함한 너비 계산 */
+    background: linear-gradient(180deg, rgba(248, 248, 250, 0.7) 0%, rgb(248, 248, 250) 39.5%);
+}
+
+

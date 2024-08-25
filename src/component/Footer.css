@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Pretendard:wght@400&display=swap'); /* 웹 폰트 임포트 */
+
+.footer-box {
+    display: flex;
+    flex-direction: column; /* 세로 방향 정렬 */
+    height: 130px;
+    width: auto;
+    background-color: #76BCEF;
+    display: flex;
+    justify-content: center; /* 왼쪽과 오른쪽에 배치 */
+    align-items: center; /* 내용 상단 정렬 */
+    padding: 10px;
+    border-top: 1px solid #ddd; /* 상단 경계선 */
+    color: white;
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 24px;
+    color: #ffffff;
+    font-family: 'Pacifico', cursive; /* 폰트 패밀리 설정 */
+}
+
