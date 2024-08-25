@@ -12,7 +12,7 @@ const Feedback = () => {
 
     // Google Analytics 이벤트 전송 (폼 제출)
     if (window.gtag) {
-      window.gtag('event', 'submit', {
+      window.gtag('event', 'feedback_submit', {
         'event_category': 'Feedback Form',
         'event_label': 'Form Submitted',
         'value': 1

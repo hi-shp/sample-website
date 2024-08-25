@@ -8,7 +8,7 @@ export const Intro = () => {
   const openModal = () => {
     // Google Analytics 이벤트 전송 (무료로 사용하기 클릭)
     if (window.gtag) {
-      window.gtag('event', 'click', {
+      window.gtag('event', 'use_for_free', {
         'event_category': 'Button',
         'event_label': 'Free Use Clicked',
         'value': 1

@@ -29,7 +29,7 @@ export const Function = () => {
 
         // Google Analytics 이벤트 전송 (버튼 클릭)
         if (window.gtag) {
-            window.gtag('event', 'click', {
+            window.gtag('event', 'go_to_use', {
                 'event_category': 'Button',
                 'event_label': 'Go to Price Section',
                 'value': 1

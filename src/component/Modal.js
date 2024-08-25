@@ -11,7 +11,7 @@ const Modal = ({ isOpen, onClose }) => {
 
         // Google Analytics 이벤트 전송 (이메일 제출)
         if (window.gtag) {
-            window.gtag('event', 'submit', {
+            window.gtag('event', 'only_email_submit', {
                 'event_category': 'Form',
                 'event_label': 'Email Submitted',
                 'value': 1

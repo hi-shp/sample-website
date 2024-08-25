@@ -9,7 +9,7 @@ const Price = ({ className }) => {
     const openModal = (label) => {
         // Google Analytics 이벤트 전송 (버튼 클릭)
         if (window.gtag) {
-            window.gtag('event', 'click', {
+            window.gtag('event', label, {
                 'event_category': 'Button',
                 'event_label': label,
                 'value': 1
@@ -66,7 +66,7 @@ const Price = ({ className }) => {
                                     <div className="feature-description">쪽지시험지 한달에 1개 생성</div>
                                 </div>
                             </div>
-                            <div className="pricebutton wrap1" onClick={() => openModal('Start Free')}>
+                            <div className="pricebutton wrap1" onClick={() => openModal('start_now')}>
                                 지금 시작하기
                             </div>
                         </div>
@@ -103,7 +103,7 @@ const Price = ({ className }) => {
                                     <div className="feature-description">광고 제거</div>
                                 </div>
                             </div>
-                            <div className="pricebutton wrap2" onClick={() => openModal('First Purchase Benefit')}>
+                            <div className="pricebutton wrap2" onClick={() => openModal('pay_4900')}>
                                 첫구매 혜택받기
                             </div>
                         </div>
@@ -147,7 +147,7 @@ const Price = ({ className }) => {
                                     <div className="feature-description">광고 제거</div>
                                 </div>
                             </div>
-                            <div className="pricebutton wrap2" onClick={() => openModal('First Purchase Benefit')}>
+                            <div className="pricebutton wrap2" onClick={() => openModal('pay_9900')}>
                                 첫구매 혜택받기
                             </div>
                         </div>
