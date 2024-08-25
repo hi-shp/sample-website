@@ -19,38 +19,29 @@
     position: relative;
     animation: slideIn 1s ease-out;
     overflow: hidden; /* 컨테이너가 자식 요소를 넘어서지 않도록 숨김 */
-    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-top: -100px;
 }
 
 /* 뷰 컨테이너 */
 .I-screen .I-view {
-    align-items: center;
-    display: flex; /* inline-flex에서 flex로 변경하여 컨테이너 내의 모든 요소를 지원 */
-    flex-direction: column;
-    gap: 48px;
-    padding: 24px;
-    position: relative;
-    margin-top: -250px;
-    margin-left: 50px;
-}
-
-/* 프레임 컨테이너 */
-.I-screen .I-frame {
-    align-items: center;
-    align-self: stretch;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    position: relative;
-    width: 100%;
+    display: flex; /* Flexbox 레이아웃을 사용하여 중앙 정렬 */
+    flex-direction: column; /* 자식 요소를 수직으로 배열 */
+    align-items: center; /* 수평 중앙 정렬 */
+    justify-content: center; /* 수직 중앙 정렬 */
+    gap: 24px; /* 자식 요소 간의 간격 설정 */
+    padding: 50px; /* 내부 여백 추가 */
+    position: relative; /* 상대 위치 설정 */
+    margin: 0; /* 기본 마진 제거 */
+    width: 100%; /* 너비를 100%로 설정하여 부모의 너비에 맞추기 */
+    box-sizing: border-box; /* 패딩과 테두리를 포함한 너비 계산 */
 }
 
 /* 이미지 스타일 */
 .I-screen .I-img {
     width: auto; /* 이미지가 컨테이너의 너비를 가득 채우게 설정 */
-    height: 70%; /* 높이를 자동으로 설정하여 비율을 유지하도록 설정 */
-    margin-left: 50px;
-    margin-top: -150px;
+    height: 60%; /* 높이를 자동으로 설정하여 비율을 유지하도록 설정 */
+    margin-top: -50px; /* 위쪽 여백 제거 */
 }
 
 /* 텍스트 래퍼 */
@@ -62,7 +53,7 @@
     font-weight: 400;
     letter-spacing: 0;
     line-height: 50px;
-    margin-top: -1px;
+    margin-top: -20px; /* 위쪽 여백 조정 */
     position: relative;
 }
 
@@ -97,19 +88,20 @@
     align-self: stretch;
     display: flex;
     flex: 0 0 auto;
-    gap: 42px;
+    gap: 24px; /* 자식 요소 간의 간격 조정 */
     position: relative;
     width: 100%;
+    margin-top: -20px; /* 위쪽 여백 조정 */
 }
 
 /* 디브 래퍼 */
 .I-screen .I-div-wrapper {
     align-items: center;
     background-color: #76bcef;
-    border-radius: 20px;
+    border-radius: 25px;
     display: flex;
     gap: 10px;
-    height: 52px;
+    height: 45px;
     justify-content: center;
     overflow: hidden;
     padding: 8px 40px;
@@ -134,14 +126,13 @@
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-
 .I-div:hover {
-transform: translateY(-3px); /* 호버 시 약간 위로 이동 */
+    transform: translateY(-3px); /* 호버 시 약간 위로 이동 */
 }
 
 .I-div:active {
-background-color: #3e8cb5; /* 클릭 시 배경색 변경 */
-transform: translateY(0); /* 클릭 시 원래 위치로 이동 */
+    background-color: #3e8cb5; /* 클릭 시 배경색 변경 */
+    transform: translateY(0); /* 클릭 시 원래 위치로 이동 */
 }
 
 @media screen and (max-width: 600px) {
@@ -149,50 +140,30 @@ transform: translateY(0); /* 클릭 시 원래 위치로 이동 */
         flex-direction: column; /* 전체 컨테이너를 수직 방향으로 배열 */
         align-items: center; /* 가운데 정렬 */
         text-align: center;
+        padding: 50px; /* 내부 여백 조정 */
+        margin-top: 0; /* 위쪽 여백 제거 */
+        margin-bottom: 20px; /* 하단 여백 추가 */
+        margin-left: 20px;
     }
 
     .I-screen .I-view {
-        margin-left: 0; /* 왼쪽 여백 제거 */
-        margin-top: 0; /* 위쪽 여백 제거 */
+        padding: 10px; /* 내부 여백 조정 */
+        margin-top: 20px; /* 위쪽 여백 추가 */
+        width: 100%; /* 컨테이너 너비 조정 */
+        box-sizing: border-box; /* 패딩과 테두리를 포함한 너비 계산 */
     }
 
     .I-screen .I-img {
-        margin-left: 0; /* 이미지의 왼쪽 여백 제거 */
-        margin-top: 0; /* 이미지의 위쪽 여백 제거 */
         width: 100%; /* 이미지 너비 조정 */
         height: auto; /* 이미지 비율 유지 */
+        margin-top: 10px; /* 이미지와 상단 요소 간의 간격 추가 */
     }
 
     .I-screen .I-div-wrapper {
         align-items: center; /* 가운데 정렬 */
         width: 90%; /* 버튼 너비 조정 */
         height: 36px; /* 버튼 높이 조정 */
-    }
-}
-
-@media screen and (max-width: 1050px) {
-
-    .I-screen {
-        flex-direction: column; /* 전체 컨테이너를 수직 방향으로 배열 */
-        align-items: center; /* 가운데 정렬 */
-        text-align: center;
-    }
-
-    .I-screen .I-view {
-        margin-left: 0; /* 왼쪽 여백 제거 */
-        margin-top: -100px; /* 위쪽 여백 제거 */
-    }
-
-    .I-screen .I-div-wrapper {
-        align-items: center; /* 가운데 정렬 */
-        width: 90%; /* 버튼 너비 조정 */
-        height: 36px; /* 버튼 높이 조정 */
-    }
-    .I-screen .I-img {
-        margin-left: 0; /* 이미지의 왼쪽 여백 제거 */
-        margin-top: 0; /* 이미지의 위쪽 여백 제거 */
-        width: 80%; /* 이미지 너비 조정 */
-        height: auto; /* 이미지 비율 유지 */
+        margin-top: 20px; /* 버튼과 상단 요소 간의 간격 추가 */
     }
 }
 
@@ -202,23 +173,22 @@ transform: translateY(0); /* 클릭 시 원래 위치로 이동 */
         flex-direction: column; /* 전체 컨테이너를 수직 방향으로 배열 */
         align-items: center; /* 가운데 정렬 */
         text-align: center;
+        padding: 60px; /* 내부 여백 조정 */
+        margin-top: 0; /* 위쪽 여백 제거 */
+        margin-bottom: 30px; /* 하단 여백 추가 */
+        margin-left: 20px;
     }
 
     .I-screen .I-view {
-        margin-left: 0; /* 왼쪽 여백 제거 */
-        margin-top: 0; /* 위쪽 여백 제거 */
+        padding: 15px; /* 내부 여백 조정 */
+        margin-top: 20px; /* 위쪽 여백 추가 */
+        width: 100%; /* 컨테이너 너비 조정 */
+        box-sizing: border-box; /* 패딩과 테두리를 포함한 너비 계산 */
     }
 
     .I-screen .I-img {
-        margin-left: 0; /* 이미지의 왼쪽 여백 제거 */
-        margin-top: 0; /* 이미지의 위쪽 여백 제거 */
         width: 100%; /* 이미지 너비 조정 */
         height: auto; /* 이미지 비율 유지 */
-    }
-
-    .I-screen .I-div-wrapper {
-        align-items: center; /* 가운데 정렬 */
-        width: 90%; /* 버튼 너비 조정 */
-        height: 36px; /* 버튼 높이 조정 */
+        margin-top: 10px; /* 이미지와 상단 요소 간의 간격 추가 */
     }
 }

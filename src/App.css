@@ -1,12 +1,16 @@
 /* 전체 페이지 스타일 */
+/* 전체 페이지 스타일 */
 .App {
     display: flex;
     flex-direction: column; /* 자식 요소를 수직으로 배열 */
     height: 100vh; /* 전체 화면 높이 */
     margin: 0;
+    overflow-x: hidden; /* 가로 스크롤바 숨기기 */
     font-family: 'Pretendard', sans-serif; /* 기본 폰트 설정 */
-    background: linear-gradient(180deg, rgba(248, 248, 250, 0.7) 0%, rgb(248, 248, 250) 39.5%);
+    background: #eeeeee;
+    box-sizing: border-box; /* 패딩과 테두리를 포함한 너비 계산 */
 }
+
 
 /* header 스타일 */
 header {
@@ -28,5 +32,3 @@ main {
     box-sizing: border-box; /* 패딩과 테두리를 포함한 너비 계산 */
     background: linear-gradient(180deg, rgba(248, 248, 250, 0.7) 0%, rgb(248, 248, 250) 39.5%);
 }
-
-

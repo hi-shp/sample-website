@@ -3,7 +3,7 @@
 
 /* 공통 스타일 */
 .card {
-    flex: 1;
+    flex: 1; /* 카드가 컨테이너 내에서 같은 비율로 보이도록 설정 */
     box-shadow: 0 8px 20px rgba(118, 118, 118, 0.2);
     border-radius: 15px;
     background-color: var(--color-white);
@@ -17,9 +17,28 @@
     position: relative;
     min-width: 120px;
     min-height: 512px;
-    width: 290px;
+    width: 290px; /* 카드의 너비를 지정 */
+    /* 카드의 너비를 고정하고, 높이는 콘텐츠에 따라 조정되도록 설정 */
+    max-width: 100%; /* 최대 너비를 부모 컨테이너의 너비에 맞게 설정 */
 }
 
+/* Basic 카드 스타일 */
+.basic {
+    border: 2px solid #d4d4d4;
+    gap: var(--gap-81xl); /* 항목 간 간격 조정 */
+}
+
+/* Standard 카드 스타일 */
+.standard {
+    border: 2px solid #76BCEF;
+    gap: var(--gap-91xl); /* 항목 간 간격 조정 */
+}
+
+/* Professional 카드 스타일 */
+.professional {
+    border: 2px solid #d4d4d4;
+    gap: var(--gap-81xl); /* 항목 간 간격 조정 */
+}
 .plan-container {
     display: flex;
     flex-direction: row;
@@ -28,24 +47,7 @@
     gap: 20px; /* Space between the cards */
 }
 
-/* Basic 카드 스타일 */
-.basic {
-    gap: var(--gap-81xl);
-}
 
-/* Standard 카드 스타일 */
-.standard {
-    flex: 0.9692;
-    box-sizing: border-box;
-    border: 2px solid #76BCEF; /* 테두리 두께, 스타일, 색상 */
-    gap: var(--gap-91xl);
-}
-
-/* Professional 카드 스타일 */
-.professional {
-    border: 2px solid var(--color-lightgray);
-    gap: var(--gap-81xl);
-}
 
 /* 타이틀 스타일 */
 .h11 {
@@ -103,12 +105,39 @@
 }
 
 .plan-price {
-    font-size: 27px;
+    color: #111;
+
+    font-family: Pretendard;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 50px; /* 138.889% */
+    letter-spacing: -0.9px;
+    margin:0;
+    margin-left: -15px;
+}
+.basic .price-duration {
+    color: #ffffff; /* 흰색으로 설정 */
 }
 
 .plan-title {
-    font-size: 20px;
     color: #767676;
+    font-family: Pretendard;
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 24px; /* 141.667% */
+    letter-spacing: -0.6px;
+    margin-bottom: -1px;
+    margin-left: -15px;
+    padding: 0;
+}
+.plan-intro{
+    display: flex;
+    width: 178px;
+    padding: 0px 4px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
 }
 
 /* 기타 레이아웃 스타일 */
@@ -117,10 +146,21 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    margin:0;
 }
 
 .plan-features, .plan-features-price {
     gap: var(--gap-xs);
+}
+
+.price-duration{
+    color: #767676;
+    font-family: Pretendard;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px; /* 91.667% */
+    letter-spacing: -0.6px;
 }
 
 .pricebutton {
@@ -266,7 +306,13 @@
 .text2 .highlight {
     font-weight: 700; /* 굵게 설정 */
     color: #5bb5ff; /* 강조를 위한 색상 변경 */
-    font-size: 30px; /* 폰트 크기 약간 증가 */
+    font-size: 20px; /* 폰트 크기 약간 증가 */
+}
+
+.price .text2{
+    margin-top: -50px;
+    font-size: 13px;
+    font-weight: 500;
 }
 
 .p-sale {
