@@ -5,7 +5,18 @@ import Modal from "./Modal"; // Modal 컴포넌트 import
 export const Intro = () => {
   const [isModalOpen, setIsModalOpen] = useState(false); // 모달 상태 관리
 
-  const openModal = () => setIsModalOpen(true); // 모달 열기
+  const openModal = () => {
+    // Google Analytics 이벤트 전송 (무료로 사용하기 클릭)
+    if (window.gtag) {
+      window.gtag('event', 'click', {
+        'event_category': 'Button',
+        'event_label': 'Free Use Clicked',
+        'value': 1
+      });
+    }
+    setIsModalOpen(true);
+  };
+
   const closeModal = () => setIsModalOpen(false); // 모달 닫기
 
   return (
@@ -33,7 +44,7 @@ export const Intro = () => {
         </div>
         <div className="I-frame-wrapper">
           <div className="I-div-wrapper" onClick={openModal} style={{ cursor: 'pointer' }}>
-            <div className="I-div" >
+            <div className="I-div">
               무료로 사용하기
             </div>
           </div>

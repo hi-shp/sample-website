@@ -6,7 +6,15 @@ import PropTypes from "prop-types";
 const Price = ({ className }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const openModal = () => {
+    const openModal = (label) => {
+        // Google Analytics 이벤트 전송 (버튼 클릭)
+        if (window.gtag) {
+            window.gtag('event', 'click', {
+                'event_category': 'Button',
+                'event_label': label,
+                'value': 1
+            });
+        }
         setIsModalOpen(true);
     };
 
@@ -15,7 +23,6 @@ const Price = ({ className }) => {
     };
 
     return (
-        
         <div className={`price ${className}`}>
             <p className="text1">
                 특별한 감사혜택을 놓치지 마세요!
@@ -31,8 +38,6 @@ const Price = ({ className }) => {
                 <br />
                 가능하며 문제를 푸는 것에 최적화되어있어요
             </p>
-
-            
 
             <section className="pricing">
                 <div className="pricing-table">
@@ -61,7 +66,7 @@ const Price = ({ className }) => {
                                     <div className="feature-description">쪽지시험지 한달에 1개 생성</div>
                                 </div>
                             </div>
-                            <div className="pricebutton wrap1" onClick={openModal}>
+                            <div className="pricebutton wrap1" onClick={() => openModal('Start Free')}>
                                 지금 시작하기
                             </div>
                         </div>
@@ -98,7 +103,7 @@ const Price = ({ className }) => {
                                     <div className="feature-description">광고 제거</div>
                                 </div>
                             </div>
-                            <div className="pricebutton wrap2" onClick={openModal}>
+                            <div className="pricebutton wrap2" onClick={() => openModal('First Purchase Benefit')}>
                                 첫구매 혜택받기
                             </div>
                         </div>
@@ -142,7 +147,7 @@ const Price = ({ className }) => {
                                     <div className="feature-description">광고 제거</div>
                                 </div>
                             </div>
-                            <div className="pricebutton wrap2" onClick={openModal}>
+                            <div className="pricebutton wrap2" onClick={() => openModal('First Purchase Benefit')}>
                                 첫구매 혜택받기
                             </div>
                         </div>

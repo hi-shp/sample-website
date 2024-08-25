@@ -26,6 +26,16 @@ export const Function = () => {
 
     const scrollToPriceSection = () => {
         const priceSection = document.getElementById("price-section");
+
+        // Google Analytics 이벤트 전송 (버튼 클릭)
+        if (window.gtag) {
+            window.gtag('event', 'click', {
+                'event_category': 'Button',
+                'event_label': 'Go to Price Section',
+                'value': 1
+            });
+        }
+
         if (priceSection) {
             priceSection.scrollIntoView({ behavior: 'smooth' });
         }

@@ -8,7 +8,16 @@ const Modal = ({ isOpen, onClose }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Here you can handle form submission, e.g., sending data to an API
+
+        // Google Analytics 이벤트 전송 (이메일 제출)
+        if (window.gtag) {
+            window.gtag('event', 'submit', {
+                'event_category': 'Form',
+                'event_label': 'Email Submitted',
+                'value': 1
+            });
+        }
+
         console.log({ email });
         setSubmitted(true);
     };
@@ -36,7 +45,6 @@ const Modal = ({ isOpen, onClose }) => {
                 {/* 이메일 입력 폼 */}
                 <form onSubmit={handleSubmit}>
                     <div className="modal-email">
-                        
                         <input
                             type="email"
                             id="email"
@@ -46,15 +54,13 @@ const Modal = ({ isOpen, onClose }) => {
                             required
                         />
                          {/* 이미지 버튼 */}
-                    <img 
-                        src="submit-button.png" 
-                        alt="Submit" 
-                        className="submit-image"
-                        onClick={handleSubmit}
-                    />
+                        <img 
+                            src="submit-button.png" 
+                            alt="Submit" 
+                            className="submit-image"
+                            onClick={handleSubmit}
+                        />
                     </div>
-                    
-                    
                 </form>
 
                 {submitted && <p className="submitted-message">제출되었습니다. 감사합니다!</p>}
