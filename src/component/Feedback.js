@@ -135,6 +135,7 @@ const Feedback = () => {
 
             <div className="checkbox-field">
               <input
+                id="discount-info"
                 className="discount-info"
                 type="checkbox"
                 name="discount-info"
