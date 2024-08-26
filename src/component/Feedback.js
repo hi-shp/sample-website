@@ -9,7 +9,7 @@ const Feedback = () => {
   const [feedback, setFeedback] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Google Analytics 이벤트 전송 (폼 제출)
@@ -29,21 +29,23 @@ const Feedback = () => {
     formData.append('phone', phone);
     formData.append('feedback', feedback);
 
-    fetch("/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: new URLSearchParams(formData).toString(),
-    })
-    .then(() => {
-      setSubmitted(true);
-      alert("제출되었습니다. 감사합니다!"); // 성공 알림 표시
-    })
-    .catch((error) => {
-      console.error("Error submitting the form", error);
-      alert("폼 제출에 실패했습니다. 다시 시도해주세요.");
-    });
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams(formData).toString(),
+      });
+
+      if (response.ok) {
+        setSubmitted(true); // 제출 성공 시 메시지 표시
+      } else {
+        console.error("폼 제출에 실패했습니다.", response.statusText);
+      }
+    } catch (error) {
+      console.error("네트워크 요청 중 오류가 발생했습니다.", error);
+    }
   };
 
   return (
