@@ -22,11 +22,13 @@ const Feedback = () => {
 
     fetch("/", {
       method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString(),
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded", // 폼 데이터를 URL 인코딩 방식으로 전송
+      },
     })
       .then(() => setSubmitted(true))
-      .catch((error) => alert(error));
+      .catch((error) => alert("폼 제출에 실패했습니다. 다시 시도해주세요."));
   };
 
   return (
@@ -51,14 +53,90 @@ const Feedback = () => {
           {/* Netlify에서 폼을 인식하도록 하는 숨겨진 필드 */}
           <input type="hidden" name="form-name" value="feedback" />
 
-          {/* HTML에서 폼 요소를 이미 처리하므로, JS로 따로 폼 요소를 관리하지 않음 */}
+          <div className="contact-form">
+            <div className="row-field">
+              <div className="name-field">
+                <label htmlFor="name">
+                  <span>이름 </span>
+                  <span className="span6">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  className="name-input"
+                  name="name"
+                  required
+                />
+              </div>
 
-          <div className="submit-button">
-            <button className="submit" type="submit">
-              <b className="b6">보내기</b>
-            </button>
+              <div className="age-field">
+                <label htmlFor="age">나이</label>
+                <input
+                  type="number"
+                  id="age"
+                  className="age-input"
+                  name="age"
+                  min="0"
+                />
+              </div>
+            </div>
 
-            {submitted && <p className="submit-message">제출되었습니다. 감사합니다!</p>}
+            <div className="email-field">
+              <label htmlFor="email">
+                <span>이메일 </span>
+                <span className="span6">*</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                className="email-input"
+                name="email"
+                required
+              />
+            </div>
+
+            <div className="contact-field">
+              <label htmlFor="phone">휴대폰</label>
+              <input
+                type="tel"
+                id="phone"
+                className="phone-input"
+                name="phone"
+              />
+            </div>
+
+            <div className="message-field">
+              <label htmlFor="feedback">
+                <span>메세지 </span>
+                <span className="span6">*</span>
+              </label>
+              <textarea
+                id="feedback"
+                className="message-input"
+                name="feedback"
+                rows={12}
+                required
+              />
+            </div>
+
+            <div className="checkbox-field">
+              <input
+                className="discount-info"
+                type="checkbox"
+                name="discount-info"
+              />
+              <label htmlFor="discount-info">
+                테크솔 정식 출시 시 할인코드 및 알림 이메일로 받기
+              </label>
+            </div>
+
+            <div className="submit-button">
+              <button className="submit" type="submit">
+                <b className="b6">보내기</b>
+              </button>
+
+              {submitted && <p className="submit-message">제출되었습니다. 감사합니다!</p>}
+            </div>
           </div>
         </form>
       </div>
