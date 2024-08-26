@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import "./Feedback.css";
 
 const Feedback = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [age, setAge] = useState('');
+  const [phone, setPhone] = useState('');
+  const [feedback, setFeedback] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
@@ -16,19 +21,29 @@ const Feedback = () => {
       });
     }
 
-    // Netlify에서 폼 제출을 처리하도록 설정
-    const form = e.target;
-    const formData = new FormData(form);
+    // 폼 데이터를 서버로 제출하는 로직
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('age', age);
+    formData.append('phone', phone);
+    formData.append('feedback', feedback);
 
     fetch("/", {
       method: "POST",
-      body: new URLSearchParams(formData).toString(),
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded", // 폼 데이터를 URL 인코딩 방식으로 전송
+        "Content-Type": "application/x-www-form-urlencoded",
       },
+      body: new URLSearchParams(formData).toString(),
     })
-      .then(() => setSubmitted(true))
-      .catch((error) => alert("폼 제출에 실패했습니다. 다시 시도해주세요."));
+    .then(() => {
+      setSubmitted(true);
+      alert("제출되었습니다. 감사합니다!"); // 성공 알림 표시
+    })
+    .catch((error) => {
+      console.error("Error submitting the form", error);
+      alert("폼 제출에 실패했습니다. 다시 시도해주세요.");
+    });
   };
 
   return (
@@ -43,16 +58,7 @@ const Feedback = () => {
           </h3>
         </div>
 
-        <form 
-          className="contact" 
-          onSubmit={handleSubmit} 
-          name="feedback" 
-          method="POST" 
-          data-netlify="true"
-        >
-          {/* Netlify에서 폼을 인식하도록 하는 숨겨진 필드 */}
-          <input type="hidden" name="form-name" value="feedback" />
-
+        <form className="contact" onSubmit={handleSubmit}>
           <div className="contact-form">
             <div className="row-field">
               <div className="name-field">
@@ -64,7 +70,8 @@ const Feedback = () => {
                   type="text"
                   id="name"
                   className="name-input"
-                  name="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   required
                 />
               </div>
@@ -75,7 +82,8 @@ const Feedback = () => {
                   type="number"
                   id="age"
                   className="age-input"
-                  name="age"
+                  value={age}
+                  onChange={(e) => setAge(e.target.value)}
                   min="0"
                 />
               </div>
@@ -90,7 +98,8 @@ const Feedback = () => {
                 type="email"
                 id="email"
                 className="email-input"
-                name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </div>
@@ -101,7 +110,8 @@ const Feedback = () => {
                 type="tel"
                 id="phone"
                 className="phone-input"
-                name="phone"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
               />
             </div>
 
@@ -115,6 +125,8 @@ const Feedback = () => {
                 className="message-input"
                 name="feedback"
                 rows={12}
+                value={feedback}
+                onChange={(e) => setFeedback(e.target.value)}
                 required
               />
             </div>
