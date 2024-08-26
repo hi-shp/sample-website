@@ -1,0 +1,3 @@
+[submodule "sample-website"]
+  path = sample-website
+  url = https://github.com/hi-shp/sample-website.git
