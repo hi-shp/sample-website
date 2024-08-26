@@ -7,6 +7,18 @@ const Feedback = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // 폼 데이터를 처리하기 위한 JavaScript 예제
+    const form = e.target;
+    const formData = new FormData(form);
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => setSubmitted(true))
+      .catch((error) => alert(error));
+
     // Google Analytics 이벤트 전송 (폼 제출)
     if (window.gtag) {
       window.gtag('event', 'feedback_submit', {
@@ -15,8 +27,6 @@ const Feedback = () => {
         'value': 1
       });
     }
-
-    setSubmitted(true);
   };
 
   return (
