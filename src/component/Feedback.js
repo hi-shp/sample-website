@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import "./Feedback.css";
 
 const Feedback = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [feedback, setFeedback] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
@@ -54,96 +51,14 @@ const Feedback = () => {
           {/* Netlify에서 폼을 인식하도록 하는 숨겨진 필드 */}
           <input type="hidden" name="form-name" value="feedback" />
 
-          <div className="contact-form">
-            <div className="row-field">
-              <div className="name-field">
-                <label htmlFor="name">
-                  <span>이름 </span>
-                  <span className="span6">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  className="name-input"
-                  name="name"  // Netlify에서 데이터를 수집하기 위한 name 속성
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  required
-                />
-              </div>
+          {/* HTML에서 폼 요소를 이미 처리하므로, JS로 따로 폼 요소를 관리하지 않음 */}
 
-              <div className="age-field">
-                <label htmlFor="age">나이</label>
-                <input
-                  type="number"
-                  id="age"
-                  className="age-input"
-                  name="age"  // Netlify에서 데이터를 수집하기 위한 name 속성
-                  min="0"
-                />
-              </div>
-            </div>
+          <div className="submit-button">
+            <button className="submit" type="submit">
+              <b className="b6">보내기</b>
+            </button>
 
-            <div className="email-field">
-              <label htmlFor="email">
-                <span>이메일 </span>
-                <span className="span6">*</span>
-              </label>
-              <input
-                type="email"
-                id="email"
-                className="email-input"
-                name="email"  // Netlify에서 데이터를 수집하기 위한 name 속성
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </div>
-
-            <div className="contact-field">
-              <label htmlFor="phone">휴대폰</label>
-              <input
-                type="tel"
-                id="phone"
-                className="phone-input"
-                name="phone"  // Netlify에서 데이터를 수집하기 위한 name 속성
-              />
-            </div>
-
-            <div className="message-field">
-              <label htmlFor="feedback">
-                <span>메세지 </span>
-                <span className="span6">*</span>
-              </label>
-              <textarea
-                id="feedback"
-                className="message-input"
-                name="feedback"  // Netlify에서 데이터를 수집하기 위한 name 속성
-                rows={12}
-                value={feedback}
-                onChange={(e) => setFeedback(e.target.value)}
-                required
-              />
-            </div>
-
-            <div className="checkbox-field">
-              <input
-                className="discount-info"
-                type="checkbox"
-                name="discount-info"  // Netlify에서 데이터를 수집하기 위한 name 속성
-              />
-              <label htmlFor="discount-info">
-                테크솔 정식 출시 시 할인코드 및 알림 이메일로 받기
-              </label>
-            </div>
-
-            <div className="submit-button">
-              <button className="submit" type="submit">
-                <b className="b6">보내기</b>
-              </button>
-
-              {submitted && <p className="submit-message">제출되었습니다. 감사합니다!</p>}
-            </div>
+            {submitted && <p className="submit-message">제출되었습니다. 감사합니다!</p>}
           </div>
         </form>
       </div>
