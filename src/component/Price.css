@@ -21,6 +21,9 @@
     /* 카드의 너비를 고정하고, 높이는 콘텐츠에 따라 조정되도록 설정 */
     max-width: 100%; /* 최대 너비를 부모 컨테이너의 너비에 맞게 설정 */
 }
+.card:hover {
+    transform: scale(1.05);
+}
 
 /* Basic 카드 스타일 */
 .basic {
@@ -373,20 +376,26 @@ a:hover {
     }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 768px) {
     .h11 {
-        font-size: var(--font-size-3xl);
+        font-size: 25px;
     }
-    .basic1, .standard1, .b4, .h33 {
+    .basic1, .standard1, .b4, .h33, .professional1, .h34, .h35 {
         font-size: var(--font-size-lgi);
     }
-    .professional1 {
-        font-size: var(--font-size-lgi);
+
+    .card {
+        scroll-snap-align: center; /* 카드가 스냅될 때 중앙으로 정렬되도록 설정 */
+        min-width: 290px; /* 모바일 화면에서도 카드의 최소 너비를 설정 */
     }
-    .h34 {
-        font-size: var(--font-size-lgi);
-    }
-    .h35 {
-        font-size: var(--font-size-lgi);
+    
+    .plan-container {
+        display: flex; /* 카드들을 가로로 배치 */
+        flex-direction: row; /* 카드들을 가로 방향으로 배치 */
+        overflow-x: auto; /* 가로 스크롤을 가능하게 함 */
+        scroll-snap-type: x mandatory; /* 스크롤 스냅 기능 추가 */
+        -webkit-overflow-scrolling: touch; /* iOS에서 부드러운 스크롤을 위해 추가 */
+        gap: 20px; /* 카드들 사이의 간격 */
+        padding: 20px; /* 카드와 컨테이너 사이의 여백 */
     }
 }

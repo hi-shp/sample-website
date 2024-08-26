@@ -142,7 +142,7 @@
     align-items: center;
     justify-content: center;
     background-color: #76bcef;
-    border-radius: 20px;
+    border-radius: 25px;
     height: 52px;
     padding: 8px 40px;
     width: 300px;
@@ -234,7 +234,7 @@
 /* 더 작은 화면용 (예: 스마트폰) */
 @media (max-width: 480px) {
     .f-text {
-        font-size: 24px; /* 더 작은 화면에서 폰트 크기 조정 */
+        font-size: 22px; /* 더 작은 화면에서 폰트 크기 조정 */
         margin-top: -80px; /* 마진 조정 */
         margin-bottom: 30px; /* 마진 조정 */
     }
@@ -256,17 +256,13 @@
         gap: 10px; /* 아이템 간격 조정 */
     }
 
-    .f-frame-5, .f-frame-6 {
+    .f-frame-5 {
         align-items: center;
         padding: 8px 16px; /* 버튼 내부 여백 조정 */
         width: 70%; /* 버튼 너비 100%로 조정 */
     }
 
-    .f-button {
-        font-size: 14px; /* 버튼 폰트 크기 조정 */
-        padding: 8px 16px; /* 버튼 내부 여백 조정 */
-        width: 50px;
-    }
+    
 
     .f-text-wrapper-2 {
         font-size: 14px; /* 더 작은 화면에서 폰트 크기 조정 */

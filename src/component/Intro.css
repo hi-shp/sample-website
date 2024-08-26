@@ -192,3 +192,64 @@
         margin-top: 10px; /* 이미지와 상단 요소 간의 간격 추가 */
     }
 }
+
+
+/* 일반적인 모바일 기기용 (예: 대부분의 스마트폰, 768px 이하) */
+@media only screen and (max-width: 767px) {
+    /* 여기에 일반적인 모바일 기기에 적용할 CSS 스타일을 작성 */
+    .I-screen {
+        flex-direction: column; /* 전체 컨테이너를 수직 방향으로 배열 */
+        align-items: center; /* 가운데 정렬 */
+        text-align: center;
+        padding: 60px; /* 내부 여백 조정 */
+        margin-top: 0; /* 위쪽 여백 제거 */
+        margin-bottom: 30px; /* 하단 여백 추가 */
+        margin-left: 20px;
+    }
+
+    .I-screen .I-view {
+        padding: 15px; /* 내부 여백 조정 */
+        margin-top: 20px; /* 위쪽 여백 추가 */
+        width: 100%; /* 컨테이너 너비 조정 */
+        box-sizing: border-box; /* 패딩과 테두리를 포함한 너비 계산 */
+    }
+
+    .I-frame{
+        width: 350px;
+    }
+
+    .I-screen .I-img {
+        width: 100%; /* 이미지 너비 조정 */
+        height: auto; /* 이미지 비율 유지 */
+        margin-top: 10px; /* 이미지와 상단 요소 간의 간격 추가 */
+    }
+
+}
+
+/* 태블릿 기기용 (예: iPad, 768px ~ 1024px) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    /* 여기에 태블릿 기기에 적용할 CSS 스타일을 작성 */
+    .I-frame{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: start;
+
+        margin: 0;
+
+
+    }
+
+    .I-frame .I-AI{
+        width: 500px;
+    }
+
+    .I-screen .I-img {
+        
+        margin-top: 10px; /* 이미지와 상단 요소 간의 간격 추가 */
+        margin-left: -230px;
+        padding-left: 0;
+    }
+    
+}
+

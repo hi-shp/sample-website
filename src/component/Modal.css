@@ -149,3 +149,13 @@
         max-height: 20px; /* 최대 높이 설정 */
     }
 }
+
+/* 일반적인 모바일 기기용 (예: 대부분의 스마트폰, 768px 이하) */
+@media only screen and (max-width: 767px) {
+    /* 여기에 일반적인 모바일 기기에 적용할 CSS 스타일을 작성 */
+    .modal-content{
+        width: 300px;
+        padding: 50px;
+        margin: 0;
+    }
+}

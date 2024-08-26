@@ -21,6 +21,19 @@ const Price = ({ className }) => {
     const closeModal = () => {
         setIsModalOpen(false);
     };
+    const scrollToCenter = (element) => {
+        const container = document.querySelector('.plan-container'); // ID 대신 클래스 사용
+        if (!container || !element) return;
+    
+        const containerWidth = container.offsetWidth;
+        const elementWidth = element.offsetWidth;
+        const elementOffsetLeft = element.getBoundingClientRect().left - container.getBoundingClientRect().left;
+        
+        container.scrollTo({
+            left: elementOffsetLeft - (containerWidth / 2) + (elementWidth / 2),
+            behavior: 'smooth'
+        });
+    };
 
     return (
         <div className={`price ${className}`}>
@@ -41,11 +54,11 @@ const Price = ({ className }) => {
             <section className="pricing">
                 <div className="pricing-table">
                     <div className="plan-names">
-                    <div id="price-section" className={`price ${className}`}>
-                        <h1 className="h11">가장 저렴하게 이용할 기회입니다!</h1>
-                    </div>
-                    <div className="plan-container">
-                        <div className="card basic">
+                        <div id="price-section" className={`price ${className}`}>
+                            <h1 className="h11">가장 저렴하게 이용할 기회입니다!</h1>
+                        </div>
+                    <div className="plan-container" id="planContainer">
+                        <div className="card basic" onClick={(e) => scrollToCenter(e.currentTarget)}>
                             <div className="plan-intro">
                                 <h3 className="plan-title">Basic</h3>
                                 <div className="plan-price-container">
@@ -74,7 +87,7 @@ const Price = ({ className }) => {
                             </div>
                         </div>
 
-                        <div className="card standard">
+                        <div className="card standard" onClick={(e) => scrollToCenter(e.currentTarget)}>
                             <div className="plan-intro">
                                 <h3 className="plan-title">Standard</h3>
                                 <div className="popularity">인기</div>
@@ -111,7 +124,7 @@ const Price = ({ className }) => {
                             </div>
                         </div>
 
-                        <div className="card professional">
+                        <div className="card professional" onClick={(e) => scrollToCenter(e.currentTarget)}>
                             <div className="plan-intro">
                                 <h3 className="plan-title">Professional</h3>
                                 <div className="plan-price-container">
@@ -154,6 +167,7 @@ const Price = ({ className }) => {
                                 첫구매 혜택받기
                             </div>
                         </div>
+                        
                     </div>
                 </div>
                 </div>
