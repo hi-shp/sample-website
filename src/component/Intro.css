@@ -203,8 +203,7 @@
         text-align: center;
         padding: 60px; /* 내부 여백 조정 */
         margin-top: 0; /* 위쪽 여백 제거 */
-        margin-bottom: 30px; /* 하단 여백 추가 */
-        margin-left: 20px;
+        margin: 0;
     }
 
     .I-screen .I-view {
@@ -217,10 +216,11 @@
     .I-frame{
         width: 350px;
     }
+    
 
     .I-screen .I-img {
-        width: 100%; /* 이미지 너비 조정 */
-        height: auto; /* 이미지 비율 유지 */
+        width: 300px; /* 이미지 너비 조정 */
+        height: 400px; /* 이미지 비율 유지 */
         margin-top: 10px; /* 이미지와 상단 요소 간의 간격 추가 */
     }
 
