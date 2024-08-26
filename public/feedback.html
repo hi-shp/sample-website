@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="Feedback.css">
+</head>
+<body>
+    <div class="feedback">
+        <div class="feedback-content">
+            <div class="feedback-title">
+                <h1 class="h13">피드백 및 질문하기</h1>
+                <h3 class="h35">
+                    여러분의 의견을 자유롭게 보내주세요
+                    <br>
+                    훌륭한 서비스로 보답하겠습니다
+                </h3>
+            </div>
+
+            <form name="contact" method="POST" data-netlify="true" action="/success.html">
+                <input type="hidden" name="form-name" value="contact">
+
+                <p>
+                    <label>이름 <input type="text" name="name" required></label>
+                </p>
+                <p>
+                    <label>이메일 <input type="email" name="email" required></label>
+                </p>
+                <p>
+                    <label>나이 <input type="number" name="age" min="0"></label>
+                </p>
+                <p>
+                    <label>휴대폰 <input type="tel" name="phone"></label>
+                </p>
+                <p>
+                    <label>메세지 <textarea name="feedback" rows="5" required></textarea></label>
+                </p>
+                <p>
+                    <button type="submit">보내기</button>
+                </p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
