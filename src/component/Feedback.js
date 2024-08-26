@@ -9,7 +9,7 @@ const Feedback = () => {
   const [feedback, setFeedback] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Google Analytics 이벤트 전송 (폼 제출)
@@ -21,17 +21,24 @@ const Feedback = () => {
       });
     }
 
-    // Netlify에서 폼 제출을 처리하도록 설정
+    // 폼 데이터를 서버로 제출하는 로직
     const form = e.target;
     const formData = new FormData(form);
 
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
-    })
-      .then(() => setSubmitted(true))
-      .catch((error) => console.error("폼 제출 중 오류가 발생했습니다.", error));
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        body: new URLSearchParams(formData).toString(),
+      });
+
+      if (response.ok) {
+        setSubmitted(true); // 제출 성공 시 메시지 표시
+      } else {
+        console.error("폼 제출에 실패했습니다.", response.statusText);
+      }
+    } catch (error) {
+      console.error("네트워크 요청 중 오류가 발생했습니다.", error);
+    }
   };
 
   return (
