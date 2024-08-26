@@ -29,7 +29,7 @@ function App() {
       </div>
 
       <header>
-        <Nav className="navbar" />
+        <Nav className="nav" />
       </header>
 
       <main>
